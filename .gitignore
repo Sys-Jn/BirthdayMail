@@ -1,0 +1,33 @@
+# 🔐 Environment variables (IMPORTANT)
+.env
+
+# 🐍 Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 📦 Virtual environment
+.venv/
+venv/
+env/
+
+# 📊 Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# 📝 Logs
+*.log
+
+# 🖥️ OS files
+.DS_Store
+Thumbs.db
+
+# 🧠 IDE files (PyCharm / VS Code)
+.idea/
+.vscode/
+
+# 🔑 Secrets / config files
+secrets.json
+
+# 📁 Temporary files
+*.tmp
