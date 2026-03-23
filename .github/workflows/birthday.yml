@@ -1,8 +1,7 @@
 name: Birthday Mail Automation
 
 on:
-  schedule:
-    - cron: "0 4 * * *"   # runs daily (UTC time)
+  push:
 
 jobs:
   run-script:
