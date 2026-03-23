@@ -2,24 +2,27 @@ name: Birthday Mail Automation
 
 on:
   push:
-  schedule:
-    - cron: "0 4 * * *"
+  workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🐍 Setup Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
-      - name: 📦 Install dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: ▶️ Run script
+      - name: Run script
+        env:                     # 🔥 THIS IS THE MISSING PART
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          BIRTHDAY_DATA: ${{ secrets.BIRTHDAY_DATA }}
         run: python main.py
