@@ -2,12 +2,13 @@ import smtplib
 from datetime import datetime
 import pandas as pd
 import random
+import os
 
 today = (datetime.now())
 today_tuple = (today.month, today.day)
 
-my_email = "samjain22october@gmail.com"
-my_password = "niaqjundkgriychu"
+my_email = os.environ.get("EMAIL")
+my_password = os.environ.get("PASSWORD")
 
 data = pd.read_csv("birthdays.csv")
 birthdays_dict = {(data_row["month"], data_row["day"]): data_row  for (index, data_row) in data.iterrows()}
